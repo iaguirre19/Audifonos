@@ -171,6 +171,7 @@ header {
         padding: calc(var(--separacion)* 2);
     }
 }
+/*modelo*/
 .texto-sobre-tech {
     grid-row: 2/3;
     color: var(--blanco);
@@ -191,7 +192,6 @@ header {
     font-size: 2rem;
     line-height: 2;
 }
-/*Modelos*/
 .modelos {
     padding: var(--separacion);
 }
@@ -214,7 +214,7 @@ header {
 .modelo {
     background-color: var(--grisClaro);
     margin-bottom: 2rem;
-    padding-left: 4rem;
+    padding-left: 1rem;
     color: var(--primario);
     border-radius: 2rem;
     min-height: 20rem;
@@ -227,10 +227,17 @@ header {
     flex-direction: column;
     justify-content: center;
 }
+@media (min-width: 768px) {
+    .modelo {
+        background-position: 90% center ;
+        margin-bottom: 2rem;
+    }
+}
 @media (min-width: 992px) {
     .modelo{
-        background-position: 80% center;
+        background-position: 85% center;
         margin-bottom: 0;
+        
     }
 }
 .modelo h3 {
@@ -247,8 +254,6 @@ header {
 .modelo-x {
     background-image: url(../img/Beats.svg);
     background-size: 14rem;
-    
-    
 }
 .modelo-y {
     background-image: url(../img/bose.svg);
@@ -262,15 +267,55 @@ header {
     background-repeat: no-repeat;
     background-size: 16rem;
 }
-@media (min-width: 992px) {
+
+@media (min-width: 768px) {
     .modelo-z {
         background-size: 25rem;
+    }
+    .modelo-z h3 {
+        background-size: 19rem;
+        font-size: 5rem;
+        margin-left: 4rem;
+    }
+    .modelo-x  h3 {
+        margin-left: 4rem;
+    }
+    .modelo-x .precio {
+        margin-left: 4rem;
+    }
+    .text-bose {
+        margin-left: 4rem;
+    }
+    .modelo-z .precio {
+        margin-left: 4rem;
+    }
+}
+@media (min-width: 992px) {
+    .modelo-z {
+        background-size: 29rem;
         grid-column: 2/3;
         grid-row: 1/3;
     }
     .modelo-z h3 {
         font-size: 4rem;
+        margin-left: 4rem;
     }
+    .modelo-z .precio {
+        margin-left: 2rem;
+    }
+    .modelo-x h3 {
+        margin-left: 2rem;
+    }
+    .modelo-x .precio {
+        margin-left: 2rem;
+    }
+    .modelo-y h3 {
+        margin-left: 2rem;
+    }
+    .modelo-y .precio {
+        margin-left: 2rem;
+    }  
+    
 }
 .text-airpods {
     max-width: 40%;
