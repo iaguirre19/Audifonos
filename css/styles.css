@@ -68,10 +68,20 @@ header {
     padding: calc(var(--separacion) * 3) 0;
     color: var(--blanco);
 }  
+.imagen-header {
+    transition-property: transform ;
+    transition-duration: .3s;
+}
+.imagen-header:hover{
+        transform: scale(1.4);
+    }
 @media (min-width: 768px) {
     .contenido-header{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+    .imagen-header:hover{
+        transform: scale(1.4);
     }
 }
 .texto-header {
