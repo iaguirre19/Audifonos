@@ -145,15 +145,35 @@ header {
 }
 /*Sobre techPro*/
 .sobre-tech {
-    background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.jpg);
     background-position: right;
     background-repeat: repeat, no-repeat; /*el color si se repite pero la imagen no*/
     background-size: 100%, 110rem;
+}
+.notavif.notwebp .sobre-tech {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.jpg);
+}
+.webp .sobre-tech {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.webp);
+}
+.avif .sobre-tech {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.avif);
 }
 @media (min-width: 768px) {
     .sobre-tech {
         background-image: linear-gradient( to left, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.jpg); 
     background-repeat: repeat, no-repeat; /*el color si se repite pero la imagen no*/
+    }
+    .notavif.notwebp .sobre-tech {
+        background-image: linear-gradient( to left, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.jpg); 
+    background-repeat: repeat, no-repeat;
+    }
+    .webp .sobre-tech {
+        background-image: linear-gradient( to left, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.webp); 
+    background-repeat: repeat, no-repeat;
+    }
+    .avif .sobre-tech {
+        background-image: linear-gradient( to left, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.avif); 
+    background-repeat: repeat, no-repeat;
     }
 }
 
@@ -226,6 +246,12 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition-property: transform background-size;
+    transition-duration: .3s;
+}
+.modelo:hover {
+    transform: scale(1.1);
+    background-size: 24rem;
 }
 @media (min-width: 768px) {
     .modelo {
@@ -236,17 +262,21 @@ header {
 @media (min-width: 992px) {
     .modelo{
         background-position: 85% center;
-        margin-bottom: 0;
-        
+        margin-bottom: 0;       
+    }
+    .modelo:hover:nth-child(3){
+        background-size: 35rem;
     }
 }
 .modelo h3 {
     font-size: 2.7rem;
+    margin-left: 1rem;
 }
 .modelo .precio {
     font-size: 3rem;
     font-weight: 900;
     line-height: 0; /*para elimar el la separacion que tiene por automatico las imagenes*/
+    margin-left: 1rem;
 }
 .modelo:first-of-type {
     margin-bottom: 0;
@@ -301,7 +331,7 @@ header {
         margin-left: 4rem;
     }
     .modelo-z .precio {
-        margin-left: 2rem;
+        margin-left: 4rem;
     }
     .modelo-x h3 {
         margin-left: 2rem;
@@ -309,13 +339,9 @@ header {
     .modelo-x .precio {
         margin-left: 2rem;
     }
-    .modelo-y h3 {
+    .text-bose {
         margin-left: 2rem;
     }
-    .modelo-y .precio {
-        margin-left: 2rem;
-    }  
-    
 }
 .text-airpods {
     max-width: 40%;
@@ -323,4 +349,100 @@ header {
 .modelo-z .precio {
     font-size: 4rem;
     padding-bottom: 1.5rem;
+}
+/*Newletter*/
+
+.newsletter {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%, 68rem;
+    margin-bottom: 15rem;
+}
+.notavif.notwebp .newsletter {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.jpg) ;
+}
+
+.webp .newsletter {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.webp) ;
+}
+
+.avif .newsletter {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.avif);
+}
+@media (min-width: 500px) {
+    .newsletter {
+        margin-bottom: 8rem;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter {
+        background-position: center, -21rem 0rem;
+        background-size: 100%, 100rem;
+        padding: 10rem 0;
+        margin-bottom: 6rem;
+    }
+    .notavif.notwebp .newsletter {
+        background-image: linear-gradient( to right, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.jpg) ;
+    }
+    .webp .newsletter {
+        background-image: linear-gradient( to right, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.webp) ;
+    }
+    .avif .newsletter {
+        background-image: linear-gradient( to right, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.avif) ;
+    }
+}
+@media (min-width: 1600px) {
+    .newsletter {
+        background-size: 100%, 200rem;
+        background-position: 0% -30rem;
+    }
+}
+.newsletter-contenedor {
+    display: grid;
+    grid-template-rows:repeat(2, 30rem) ;
+    gap: var(--separacion);
+}
+@media (min-width: 768px) {
+    .newsletter-contenedor {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+.texto-newsletter {
+    grid-row: 2/3;
+}
+@media (min-width: 768px) {
+    .texto-newsletter {
+        grid-row: unset;
+        grid-column: 2/3;
+    }
+}
+.formulario input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+}
+.formulario input[type="submit"] {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--primario);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    border: none;
+    color: var(--blanco);
+    transition-property: font-size;
+    transition-duration: .3s;
+}
+.formulario input[type="submit"]:hover {
+    transform: scale(1.0);
+    font-size:3rem;
+}
+/*Footer*/
+.footer p{
+    text-align: center;
+    font-family: var(--fuenteSecundaria);
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: var(--primario);
+    padding: 2 0;
 }
